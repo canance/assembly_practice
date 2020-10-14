@@ -1,6 +1,8 @@
+; copy str1 contents to str2
+
 section .data
 str1: db "Hello, world!", 0xa, 0
-str1_len: equ ($-str1)
+str1_len: equ ($ - str1)
 
 section .bss
 str2: resb str1_len
@@ -15,6 +17,7 @@ main:
 mov esi, str1 ; set the source
 mov edi, str2 ; set the destination
 mov ecx, str1_len ; number of times to repeat
+cld ; clear direction flag, move from left --> right
 rep movsb ; rep instruction movs bytes
 
 ; print str2
