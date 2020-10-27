@@ -8,11 +8,11 @@ data: resq 1
 section .text
 global main
 main:
-movq xmm0, [w1]
-movq xmm1, [w2]
+movq mm0, [w1]
+movq mm1, [w2]
 
-paddsw xmm0, xmm1
-movq [data], xmm0
+paddsw mm0, mm1
+movq [data], mm0
 
 xor eax, eax
 xor ebx, ebx
