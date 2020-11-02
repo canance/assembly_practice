@@ -1,1 +1,1 @@
-gcc -o basic -masm=intel -m32 basic.c
+gcc -o basic -masm=intel -m32 -g basic.c
